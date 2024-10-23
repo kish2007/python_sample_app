@@ -1,8 +1,7 @@
-from flask import Flask
-app = Flask(__name__)
+from fastapi import FastAPI
+import uvicorn
 
-
-@app.route("/")
-def home():
-    return "Hello, this is a sample Python Web App running on Flask Framework!"
-
+app=FastAPI()
+@app.get("/")
+def read_root():
+    return "Hello World"
